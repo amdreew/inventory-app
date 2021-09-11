@@ -1,5 +1,6 @@
 import {EnviromentModel} from './enviroment.model';
 
 export const environment: EnviromentModel = {
-  production: true
+  production: true,
+  version: '1'
 };

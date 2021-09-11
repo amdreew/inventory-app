@@ -1,11 +1,11 @@
-<div class="login-container">
+<div class="login-container" [formGroup]="formLogin">
   <div class="login-info-container">
     <h1 class="title">Log in with</h1>
     <div class="inputs-container">
-      <input class="input" type="text" placeholder="Username">
-      <input class="input" type="text" placeholder="Password">
+      <input class="input" type="email" [formControlName]="keys.USER_NAME" placeholder="Username">
+      <input class="input" type="password" [formControlName]="keys.PASSWORD" placeholder="Password">
       <p>Forgot password? <span class="span">Click here</span></p>
-      <button class="btn">login</button>
+      <button class="btn" [disabled]="formLogin.invalid" (click)="onLogin()" >login</button>
       <p>Don't have an account? <span class="span">Sign Up</span></p>
     </div>
   </div>
