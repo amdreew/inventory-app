@@ -1,5 +1,4 @@
 export enum LoginKeys {
-  USER_NAME = 'userName' +
-    '',
+  USER_NAME = 'userName',
   PASSWORD = 'password'
 }

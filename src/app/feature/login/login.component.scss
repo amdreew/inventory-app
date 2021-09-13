@@ -8,6 +8,15 @@
   overflow: hidden;
 }
 
+form input:required {
+  border:2px solid yellow;
+/* otras propiedades */
+}
+
+.login-error {
+  border: 2px;
+}
+
 .login-info-container {
   width: 50%;
   margin: 0 auto;
@@ -61,6 +70,8 @@
   border: 2px solid #674baf;
 }
 
+
+
 .btn {
   width: 80%;
   letter-spacing: 1px;
@@ -68,8 +79,15 @@
   color: white;
   border: none;
   border-radius: 5px;
-  background-color: #674baf;
   cursor: pointer;
+}
+
+.activado{
+  background-color: #674baf;
+}
+
+.desactivado{
+  background-color:steelblue;
 }
 
 .inputs-container p {
