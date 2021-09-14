@@ -18,10 +18,10 @@ export class StoreManageServiceService {
   }
 
   public setToken(token: string): void{
-    this.secureLS.set('123456',token)
+    this.secureLS.set('key',token)
   }
 
   public getToken(): string{
-    return this.secureLS.get('123456')
+    return this.secureLS.get('key')
   }
 }

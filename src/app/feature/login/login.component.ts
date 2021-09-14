@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {LoginKeys} from './Models/Login.keys';
 
 @Component({
@@ -24,5 +24,14 @@ export class LoginComponent implements OnInit {
     console.log(this.formLogin.value)
     localStorage.setItem("llave","jndcsjn")
   }
+
+  getEmailField(): AbstractControl{
+    return this.formLogin.get('userName')!;
+  }
+
+  getPasswordField(): AbstractControl{
+    return this.formLogin.get('password')!;
+  }
+
 
 }
