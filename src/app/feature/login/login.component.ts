@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
 
   public onLogin(): void {
     console.log(this.formLogin.value)
+    localStorage.setItem("llave","jndcsjn")
   }
 
 }
