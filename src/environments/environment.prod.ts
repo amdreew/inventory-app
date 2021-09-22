@@ -5,7 +5,7 @@ export const environment: EnviromentModel = {
   version: '1',
   security: true,
   api: '',
-  apiToken: '',
+  apiToken: 'http://127.0.0.1:9090/oauth/token',
   encriptionConfig: {
     encriptionKey: '9zgxN}Ca!:,#>tE#3{![KDV{r0uw+Fh',
     encriptionType: {

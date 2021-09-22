@@ -8,8 +8,8 @@ export const environment: EnviromentModel = {
   production: false,
   version: '1',
   security: true,
-  api: 'http://127.0.1/',
-  apiToken: '',
+  api: 'http:///',
+  apiToken: 'http://127.0.0.1:9090/oauth/token',
   encriptionConfig: {
   encriptionKey: '9zgxN}Ca!:,#>tE#3{![KDV{r0uw+Fh',
   encriptionType: {

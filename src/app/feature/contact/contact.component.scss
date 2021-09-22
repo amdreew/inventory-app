@@ -1,0 +1,21 @@
+mat-card {
+    padding: 0;
+    margin: 0;
+    border: solid 1px #DFDFDF;
+    mat-card-header {
+      background-color: #F7F7F7;
+      padding: 10px;
+      mat-card-title {
+        color: #004898;
+        padding: 10px 0;
+        margin: 0;
+      }
+      mat-card-content {
+        padding: 20px;
+      }
+    }
+  }
+
+  ::ng-deep .mat-card-header-text{
+      margin: 0px;
+  }

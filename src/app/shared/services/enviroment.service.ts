@@ -14,4 +14,8 @@ export class EnviromentService {
   get cryptoConfig (): IEncriptionConfig {
     return environment.encriptionConfig
   }
+
+  get urlApiToken (): string {
+    return environment.apiToken;
+  }
 }
