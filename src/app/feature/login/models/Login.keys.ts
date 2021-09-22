@@ -1,4 +1,5 @@
 export enum LoginKeys {
-  USER_NAME = 'userName',
-  PASSWORD = 'password'
+  USER_NAME = 'username',
+  PASSWORD = 'password',
+  GRANT_TYPE = 'grant_type'
 }

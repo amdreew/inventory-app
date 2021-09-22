@@ -4,11 +4,9 @@
     <div class="inputs-container">
       <input class="input" type="email" [formControlName]="keys.USER_NAME" placeholder="Username">
 
-      <small *ngIf="formLogin.controls['userName'].invalid && formLogin.controls['userName'].touched" class="login-error"><b>Ingrese email valido!!</b></small> 
-
       <input class="input" type="password" [formControlName]="keys.PASSWORD" placeholder="Password">
 
-      <small *ngIf="formLogin.controls['password'].invalid && formLogin.controls['password'].touched" class="login-error"><b>Ingrese password</b></small> 
+      <small *ngIf="formLogin.controls['password'].invalid && formLogin.controls['password'].touched" class="login-error"><b>Ingrese password</b></small>
 
       <p>Forgot password? <span class="span">Click here</span></p>
       <button class="btn" [disabled]="formLogin.invalid" (click)="onLogin()" [ngClass]="{'activado': formLogin.valid, 'desactivado': formLogin.invalid}" >login</button>

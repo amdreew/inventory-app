@@ -3,5 +3,13 @@
 body {
   height: 100vh;
   font-family: 'Poppins', sans-serif;
-  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  background-color: #e5e5e5;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.fill-space {
+  flex: 1 1 auto;
 }
