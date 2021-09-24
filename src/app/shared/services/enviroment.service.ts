@@ -18,4 +18,8 @@ export class EnviromentService {
   get urlApiToken(): string {
     return environment.apiToken
   }
+
+  get urlApi(): string {
+    return this.urlApi;
+  }
 }
