@@ -15,4 +15,10 @@ export class ContactService {
     return this.http.get<Contact[]>(this.URL);
   }
 
+  public update(contact: Contact): Observable<Contact> {
+    return this.http.put<Contact>(this.URL, contact);
+  }
+
+
+
 }

@@ -18,7 +18,7 @@ const routes: Routes = [
         loadChildren: ()=> import('./components/list-contact/list-contact.module').then(m => m.ListContactModule)
       },
       {
-        path: Paths.VIEW_CONTACT,
+        path: `${Paths.VIEW_CONTACT}/:data`,
         loadChildren: () => import('./components/view-contact/view-contact.module').then(m => m.ViewContactModule)
       }
     ]
