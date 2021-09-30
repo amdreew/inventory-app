@@ -3,15 +3,15 @@
   <div class="form-row mb-4 row">
     <div class="form-group col-md-4">
       <label for="nombres" class="label-style">Nombres:</label>
-      <input type="text" name="nombres" id="nombres" formControlName="nombres" class="form-control">
+      <input type="text" name="nombres" id="nombres" formControlName="nombres" class="form-control" autocomplete="off">
     </div>
     <div class="form-group col-md-4">
       <label for="apellidos" class="label-style">Apellidos:</label>
-      <input type="text" name="apellidos" id="apellidos" class="form-control" formControlName="apellidos">
+      <input type="text" name="apellidos" id="apellidos" class="form-control" formControlName="apellidos" autocomplete="off">
     </div>
     <div class="form-group col-md-4">
       <label for="nacimiento" class="label-style">Fecha de Nacimiento:</label>
-      <input type="date" name="nacimiento" id="nacimiento" class="form-control" formControlName="fechaNacimiento">
+      <input type="date" name="nacimiento" id="nacimiento" class="form-control" formControlName="fechaNacimiento" autocomplete="off">
     </div>
   </div>
   <div class="form-row mb-4 row">
@@ -22,14 +22,18 @@
         <option value="2">Soltero</option>
       </select>
     </div>
+
     <div class="form-group col-md-4">
-      <label for="test2" class="label-style">Tiene Hermanos:</label>
-      <input type="text" name="test2" id="test2" class="form-control" formControlName="tieneHermanos">
+      <label for="tieneHermanos" class="label-style">Tiene Hermanos:</label>
+      <select name="tieneHermanos" id="tieneHermanos" class="form-select" formControlName="tieneHermanos">
+        <option [value]="true">Si Tiene</option>
+        <option [value]="false">No Tiene</option>
+      </select>
     </div>
   </div>
   <div class="form-row mb-4 row d-flex justify-content-center">
     <button type="button" class="btn btn-danger" (click)="return()">Regresar</button>
-    <button type="button" class="btn btn-primary" (click)="update()">Actualizar</button>
+    <button type="button" class="btn btn-primary" (click)="runAction()">{{contact?.action === actions.UPDATE? 'Actualizar' : 'Guardar'}}</button>
   </div>
 </div>
 

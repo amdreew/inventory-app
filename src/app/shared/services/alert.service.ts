@@ -17,10 +17,8 @@ export class AlertService {
   public async viewWarning(menssage: string, title?: string): Promise<any> {
     return AlertService.viewIcon(menssage, title ? title : '', 'warning');
   }
-  public async viewError(menssage: string, title?: string): Promise<any> {
-    return AlertService.viewIcon(menssage, title ? title : '', 'error');
+  public async viewError(menssage: string | undefined, title?: string): Promise<any> {
+    return AlertService.viewIcon(menssage ? menssage : 'Error desconocido!', title ? title : '', 'error');
   }
-
-
 
 }

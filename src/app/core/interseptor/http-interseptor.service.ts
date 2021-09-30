@@ -8,10 +8,11 @@ import {
   HttpRequest, HttpResponse,
   HttpSentEvent, HttpUserEvent
 } from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, throwError} from "rxjs";
 import {StorageManagerService} from "../services/storage-manager.service";
 import {MapResponseDataService} from "../services/map-response-data.service";
-import {map} from "rxjs/operators";
+import {catchError, map} from "rxjs/operators";
+import {ErrorHttpManagerService} from "../services/error-http-manager.service";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,8 @@ export class HttpInterseptorService implements HttpInterceptor{
 
   constructor(
     private readonly storage: StorageManagerService,
-    private readonly mapResponseDataService: MapResponseDataService
+    private readonly mapResponseDataService: MapResponseDataService,
+    private readonly errorHttpManagerService: ErrorHttpManagerService
     ) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler):
@@ -29,6 +31,13 @@ export class HttpInterseptorService implements HttpInterceptor{
       map((event: HttpEvent<any>) => {
         if(event instanceof  HttpResponse) {
           return this.mapResponseDataService.mapResponse(event)
+        }
+      }),
+      // @ts-ignore
+      catchError((error) => {
+        if(error instanceof HttpErrorResponse) {
+          this.errorHttpManagerService.handleError(error);
+          return throwError(error);
         }
       })
     )

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StorageManagerService} from "../../core/services/storage-manager.service";
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly storageManagerService: StorageManagerService) { }
 
   ngOnInit(): void {
+  }
+
+  public logout(): void {
+    this.storageManagerService.logout();
   }
 
 }

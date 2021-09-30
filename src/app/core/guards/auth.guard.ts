@@ -3,6 +3,7 @@ import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTre
 import { Observable } from 'rxjs';
 import {StorageManagerService} from "../services/storage-manager.service";
 import {Paths} from "../../shared/models/path/Paths";
+import {NavigationService} from "../../shared/services/navigation.service";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class AuthGuard implements CanActivate {
 
   constructor(
     private readonly storageManagerService: StorageManagerService,
-    private readonly router: Router
+    private readonly navigationService: NavigationService
     ) {
   }
 
@@ -21,7 +22,7 @@ export class AuthGuard implements CanActivate {
     if (this.storageManagerService.getToken()) {
       return true;
     }
-    this.router.navigate([Paths.LOGIN]);
+    this.navigationService.navigate(Paths.LOGIN);
     return false;
   }
 

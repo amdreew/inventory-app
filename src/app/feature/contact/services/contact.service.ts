@@ -18,6 +18,14 @@ export class ContactService {
   public update(contact: Contact): Observable<Contact> {
     return this.http.put<Contact>(this.URL, contact);
   }
+  public save(contact: Contact): Observable<Contact> {
+    return this.http.post<Contact>(this.URL, contact);
+  }
+
+  public deletedContact(id: number): Observable<string> {
+    return this.http.delete<string>(`${this.URL}/${id}`);
+  }
+
 
 
 
